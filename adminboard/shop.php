@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Admin Dashboard</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="style.css">
+       
+
+    </head>
+    <body>
+        
+        <div class="container">
+            <div class="navigation">
+            <ul>
+                <li>
+                    <a href="#">
+                    <span class="icon"><i class="fa fa-gift" aria-hidden="true" style="font-size:30px;"></i></span>
+                    <span class="title"><h2>Gift Shop</h2></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="index.php">
+                    <span class="icon"><i class="fa fa-home" aria-hidden="true" style="font-size:20px;"></i></span>
+                    <span class="title">Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="shop.php">
+                    <span class="icon"><i class="fa fa-shopping-bag" aria-hidden="true" style="font-size:20px;"></i></span>
+                    <span class="title">Shop</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="customers.php">
+                    <span class="icon"><i class="fa fa-users" aria-hidden="true" style="font-size:20px;"></i></span>
+                    <span class="title">Customers</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="message.php">
+                    <span class="icon"><i class="fa fa-comment" aria-hidden="true" style="font-size:20px;"></i></span>
+                    <span class="title">Messages</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                    <span class="icon"><i class="fa fa-cog" aria-hidden="true" style="font-size:20px;"></i></span>
+                    <span class="title">Settings</span>
+                </li>
+                <li>
+                    <a href="#">
+                    <span class="icon"><i class="fa fa-question-circle" aria-hidden="true" style="font-size:20px;"></i></span>
+                    <span class="title">Help</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                    <span class="icon"><i class="fa fa-phone" aria-hidden="true" style="font-size:20px;"></i></span>
+                    <span class="title">Contact Us</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                    <span class="icon"><i class="fa fa-moon-o" id="icon1" aria-hidden="true" style="font-size:20px;"></i></span>
+                    <span class="mode" onclick="modeChange();">Mode</span>
+                    </a>
+                </li>
+            </ul>
+            </div>
+            <div class="main">
+                <div class="topbar">
+                    <div class="toggle" onclick="toggleMenu();" ></div>
+                    <div class="search">
+                        <label>
+                            <input type="text" placeholder="Search here">
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                        </label>
+                    </div>
+
+                    </div>
+                    <div class="cardBox">
+                        <div class="card"> 
+                        <img src="pencilcase.jpg" height="120px" class="details" alt="...">
+                        
+                          <h5 class="card-title">Pencil Case</h5>
+                          <p class="card-text"> 250 Rs</p>
+                          <br>
+                          <a href="#" class="btn btn-primary">Buy</a>
+                        </div>
+                        <div class="card"> 
+                            <img src="paperlantern.jpg" height="120px" class="details" alt="...">
+                            
+                              <h5 class="card-title">Paper Lantern</h5>
+                              <p class="card-text"> 30 Rs</p>
+                              <br>
+                              <a href="#" class="btn btn-primary">Buy</a>
+                            </div>
+                            <div class="card"> 
+                                <img src="picnicbasket.jpg" height="120px" class="details" alt="...">
+                                
+                                  <h5 class="card-title">Picnic Basket</h5>
+                                  <p class="card-text"> 500 Rs</p>
+                                  <br>
+                                  <a href="#" class="btn btn-primary">Buy</a>
+                                </div>
+                                <div class="card"> 
+                                    <img src="perfume.jpg" height="120px" class="details" alt="...">
+                                    
+                                      <h5 class="card-title">Perfume</h5>
+                                      <p class="card-text"> 1500 Rs</p>
+                                      <br>
+                                      <a href="#" class="btn btn-primary">Buy</a>
+                                    </div>
+                                    <div class="card"> 
+                                        <img src="journal.jpg" height="120px" class="details" alt="...">
+                                        
+                                          <h5 class="card-title">Journal Book</h5>
+                                          <p class="card-text"> 700 Rs</p>
+                                          <br>
+                                          <a href="#" class="btn btn-primary">Buy</a>
+                                        </div>
+                                        <div class="card"> 
+                                            <img src="washitape.jpg" height="120px" class="details" alt="...">
+                                            
+                                              <h5 class="card-title">Washi Tapes</h5>
+                                              <p class="card-text"> 30 Rs</p>
+                                              <br>
+                                              <a href="#" class="btn btn-primary">Buy</a>
+                                            </div>
+                                            
+                      </div>
+                      </div>
+
+                    <script>
+                        function toggleMenu(){
+                            let toggle = document.querySelector('.toggle');
+                            let navigation = document.querySelector('.navigation');
+                            let main = document.querySelector('.main');
+                            toggle.classList.toggle('active');
+                            navigation.classList.toggle('active');
+                            main.classList.toggle('active');
+                        }
+           </script>            
