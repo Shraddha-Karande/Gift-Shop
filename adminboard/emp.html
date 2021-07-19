@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Employee</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="style.css">
+       
+
+    </head>
+    <body>
+        
+        <div class="container">
+            
+            <div class="navigation">
+            <ul>
+                <li>
+                    <a href="#">
+                    <span class="icon"><i class="fa fa-gift" aria-hidden="true" style="font-size:30px;"></i></span>
+                    <span class="title"><h2>Gift Shop</h2></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html">
+                    <span class="icon"><i class="fa fa-home" aria-hidden="true" style="font-size:20px;"></i></span>
+                    <span class="title">Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="shop.html">
+                    <span class="icon"><i class="fa fa-shopping-bag" aria-hidden="true" style="font-size:20px;"></i></span>
+                    <span class="title">Shop</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="customers.html">
+                    <span class="icon"><i class="fa fa-users" aria-hidden="true" style="font-size:20px;"></i></span>
+                    <span class="title">Customers</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="emp.html">
+                    <span class="icon"><i class="fa fa-id-badge" aria-hidden="true" style="font-size:20px;"></i></span>
+                    <span class="title">Employee</span>
+                </li>
+                <li>
+                    <a href="user.html">
+                    <span class="icon"><i class="fa fa-user" aria-hidden="true" style="font-size:20px;"></i></span>
+                    <span class="title">Users</span>
+                </li>
+                <li>
+                    <a href="message.html">
+                    <span class="icon"><i class="fa fa-comment" aria-hidden="true" style="font-size:20px;"></i></span>
+                    <span class="title">Messages</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                    <span class="icon"><i class="fa fa-cog" aria-hidden="true" style="font-size:20px;"></i></span>
+                    <span class="title">Settings</span>
+                </li>
+                <li>
+                    <a href="#">
+                    <span class="icon"><i class="fa fa-question-circle" aria-hidden="true" style="font-size:20px;"></i></span>
+                    <span class="title">Help</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                    <span class="icon"><i class="fa fa-phone" aria-hidden="true" style="font-size:20px;"></i></span>
+                    <span class="title">Contact Us</span>
+                    </a>
+                </li>
+                
+            </ul>
+            </div>
+            <div class="main">
+             
+                <div class="topbar">
+                    <div class="toggle" onclick="toggleMenu();" ></div>
+                    <div class="search">
+                        <label>
+                            <input type="text" placeholder="Search here">
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                        </label>
+                    </div>
+                    
+                    </div>
+                    
+                    <br><div class="cardBox2">
+                        
+                    <div class="details1">
+                        <div class="custdetails">
+                            <div class="cardHeader">
+                                <h2>Employee Details</h2>
+                                <button type = "submit" class="button" onclick="openForm()"> Add Employee</button>
+                                </div>
+                           <table class="list" id="customerList" onsubmit="readFromData()" onsubmit="insertNewRecord()">
+                               <thead>
+                                   <tr>
+                                    <td>Name</td>
+                                    <td>Country</td>
+                                    <td>Phone no.</td>
+                                    <td>Email</td>
+                                   </tr>
+                               </thead>
+                               <tbody>
+                            
+                               </tbody>
+                           </table>
+                                
+                                    
+                                   
+                                </div>
+                                
+                                </div>
+                                </div>
+                                
+                           
+                        </div>
+                        <div class="bg-modal" id="myForm" >
+                            <div class="modal-content">
+                                <div class="close" onclick="closeForm()" >+</div>
+                                <form onsubmit="event.preventDefault()" >
+                                <h3>Employee Details</h3>
+                                
+                                <input type="text" class="form-control" id="id" placeholder="Employee name" reqired>
+                               
+                                <input type="text" class="form-control" id="country" placeholder="Country" required>
+                               
+                                <input type="number" class="form-control" id="phone" placeholder="Phone no." required>
+                                
+                                <input type="email" class="form-control" id="email" placeholder="Email id" required> 
+                               
+                                <div>
+                                <button type="submit" id="submit" onclick="onFormSubmit()" class="btn btn-info">Add Employee</button>
+                                </div>
+                                
+                                </form>
+                            </div>
+                        </div>
+                         </div>
+                         
+                        </div>
+            </div>
+
+            
+                                
+
+                    <script>
+                        function toggleMenu(){
+                            let toggle = document.querySelector('.toggle');
+                            let navigation = document.querySelector('.navigation');
+                            let main = document.querySelector('.main');
+                            toggle.classList.toggle('active');
+                            navigation.classList.toggle('active');
+                            main.classList.toggle('active');
+                        }
+
+                       
+           </script>            
+
+            <script>
+                function openForm() {
+                    document.getElementById("myForm").style.display = "block";
+                    
+                }
+
+                function closeForm() {
+                    document.getElementById("myForm").style.display = "none";
+                }
+            </script>     
+            <script>
+                function onFormSubmit(){
+                    var formData = readFromData();
+                    insertNewRecord(formData);
+                }
+
+                function readFromData() {
+                    var formData = {};
+                    formData["id"] = document.getElementById("id").value;
+                    formData["country"] = document.getElementById("country").value;
+                    formData["phone"] = document.getElementById("phone").value;
+                    formData["email"] = document.getElementById("email").value;
+                    return formData;
+                                }
+
+                function insertNewRecord(data) {
+                    var table = document.getElementById("customerList").getElementsByTagName('tbody')[0];
+                    var newRow = table.insertRow(table.length);
+                    cell1 = newRow.insertCell(0);
+                    cell1.innerHTML = data.id;
+                    cell2 = newRow.insertCell(1);
+                    cell2.innerHTML = data.country;
+                    cell3 = newRow.insertCell(2);
+                    cell3.innerHTML = data.phone;
+                    cell4 = newRow.insertCell(3);
+                    cell4.innerHTML = data.email;
+                    
+                    
+                }
+
+               
+
+
+            </script>
+
+            
+           </body>
+        </html>
+
+        
